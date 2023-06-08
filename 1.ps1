@@ -20,9 +20,6 @@ cp $env:USERPROFILE\Desktop\YOU_ARE_NEXT.png $env:USERPROFILE\Desktop\YOU_ARE_NE
 $f++
 }
 
-# Change wallpaper
-Set-ItemProperty 'HKCU:Control Panel\Desktop' Wallpaper "$env:USERPROFILE\temp\w.jpg"; 1..59 | % {RUNDLL32.EXE USER32.DLL,UpdatePerUserSystemParameters -windowstyle hidden;};
-
 # Define speakervolume buttons
 Function Set-SpeakerVolume
 
@@ -61,6 +58,9 @@ $Form.ShowInTaskbar = $False
 $Form.FormBorderStyle = 'None'
 $Form.MaximizeBox = $False
 $Form.Show();
+
+# Change wallpaper
+Set-ItemProperty 'HKCU:Control Panel\Desktop' Wallpaper "$env:USERPROFILE\temp\w.jpg"; 1..59 | % {RUNDLL32.EXE USER32.DLL,UpdatePerUserSystemParameters -windowstyle hidden;};
 
 # Remove script
 Remove-Item -Path $MyInvocation.MyCommand.Source
